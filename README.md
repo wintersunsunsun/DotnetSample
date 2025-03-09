@@ -3,19 +3,34 @@
 dotnet new webapi --use-controllers -o TodoApi
 ```
 
+### Trust the HTTPS development certificate
+```bash
+dotnet dev-certs https --trust
+```
+
 ### Add Library
+Add NuGet packages required for develop
 ```bash
 cd TodoApi
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 dotnet add package NSwag.AspNetCore
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
 ```
 
-### Generate Assets for Build and Debug
-When Visual Studio Code requests that you add assets to build and debug the project, select Yes. If Visual Studio Code doesn't offer to add build and debug assets, select View > Command Palette and type ".NET" into the search box. From the list of commands, select the .NET: Generate Assets for Build and Debug command.
-
-### Trust the HTTPS development certificate
+Install the scaffolding engine (dotnet-aspnet-codegenerator) after uninstalling any possible previous version.
+### 
 ```bash
-dotnet dev-certs https --trust
+dotnet tool uninstall -g dotnet-aspnet-codegenerator
+dotnet tool install -g dotnet-aspnet-codegenerator
+dotnet tool update -g dotnet-aspnet-codegenerator
+```
+
+### Scaffolds Controller
+```bash
+dotnet aspnet-codegenerator controller -name TodoItemsController -async -api -m TodoItem -dc TodoContext -outDir Controllers
 ```
 
 ### Run the app
