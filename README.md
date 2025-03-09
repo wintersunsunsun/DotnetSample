@@ -3,10 +3,11 @@
 dotnet new webapi --use-controllers -o TodoApi
 ```
 
-### Add a NuGet package
+### Add Library
 ```bash
 cd TodoApi
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
+dotnet add package NSwag.AspNetCore
 ```
 
 ### Generate Assets for Build and Debug
