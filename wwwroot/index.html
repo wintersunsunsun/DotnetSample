@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th><label for="crypto-select">Cryptocurrencies</label></th>
+                <th><label for="fiat-select">Forex Currency</label></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <select id="crypto-select" multiple>
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="LTC">Litecoin (LTC)</option>
+                        <option value="XRP">Ripple (XRP)</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="fiat-select">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="JPY">JPY</option>
+                        <option value="TWD">TWD</option>
+                    </select>
+                </td>
+                <td>
+                    <button id="exchange-button">Exchange</button>
+                </td>
+            </tr>
+        </table>
+        <div id="results" class="results">
+            <!-- Exchange rates will be displayed here -->
+        </div>
+    </div>
+</body>
+
+</html>
